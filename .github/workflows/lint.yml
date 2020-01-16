@@ -36,7 +36,7 @@ jobs:
           git config --global user.name "Github Action"
           changes=$(git status -s | wc -l)
           echo $changes
-          if [ changes>0 ] ; then
+          if [ "$changes" -gt "0"] ; then
             git add -A .
             git commit -am 'lint'
           fi
